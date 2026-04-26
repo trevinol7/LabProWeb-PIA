@@ -1,5 +1,11 @@
+-- Configurar charset para soporte completo de español
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 -- Crear base de datos
-CREATE DATABASE IF NOT EXISTS monterrey_reporta;
+CREATE DATABASE IF NOT EXISTS monterrey_reporta
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
 USE monterrey_reporta;
 
 -- Tabla de usuarios

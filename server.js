@@ -29,6 +29,13 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+// Fallback SPA — sirve index.html para cualquier ruta que no sea /api
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  }
+});
+
 // Manejo de errores global
 app.use((err, req, res, next) => {
   console.error('Error:', err);
